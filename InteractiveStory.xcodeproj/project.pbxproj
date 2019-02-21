@@ -15,6 +15,7 @@
 		BA4CDD9E8615C487D3DA697F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA4CDCEE0D1862CDF64D888B /* LaunchScreen.storyboard */; };
 		BA4CDF1A631069BEEFE1930E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA4CD903107B20E1360A3983 /* Assets.xcassets */; };
 		BA4CDF4B6DA2C6CF2F994E7A /* InteractiveStoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDEF4319695F05A69C8D1 /* InteractiveStoryUITests.swift */; };
+		BA4CDFB30AA44D6826D81C8B /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDF876E6A642197C2109A /* PageController.swift */; };
 		BA4CDFBD394A6EF3FF826B75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD74CB8D8A2A2BEE208F5 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		BA4CDD886CAEA17BAF30EAB3 /* InteractiveStoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InteractiveStoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4CDDA4A6EBC712FD5BFC1A /* InteractiveStory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveStory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA4CDEF4319695F05A69C8D1 /* InteractiveStoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveStoryUITests.swift; sourceTree = "<group>"; };
+		BA4CDF876E6A642197C2109A /* PageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		BA4CDFD551C7DDC4EE742E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				BA4CD74CB8D8A2A2BEE208F5 /* ViewController.swift */,
 				BA4CD63F9D4BDD67A25CB753 /* Story.swift */,
 				BA4CD0E5BF81BC7FBF0F15CB /* Page.swift */,
+				BA4CDF876E6A642197C2109A /* PageController.swift */,
 			);
 			path = InteractiveStory;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				BA4CDFBD394A6EF3FF826B75 /* ViewController.swift in Sources */,
 				BA4CD8E792002A938BF44939 /* Story.swift in Sources */,
 				BA4CD0DF524C35E08659970B /* Page.swift in Sources */,
+				BA4CDFB30AA44D6826D81C8B /* PageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

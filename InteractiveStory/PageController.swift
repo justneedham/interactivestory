@@ -13,10 +13,30 @@ class PageController: UIViewController {
     var page: Page?
 
     // MARK: - User Interface Properties
-    let artworkView = UIImageView()
-    let storyLabel = UILabel()
-    let firstChoiceButton = UIButton(type: .system)
-    let secondChoiceButton = UIButton(type: .system)
+    let artworkView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    let storyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+
+    let firstChoiceButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    let secondChoiceButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     required init?(coder adDecoder: NSCoder) {
         super.init(coder: adDecoder)
@@ -51,6 +71,7 @@ class PageController: UIViewController {
 
             if let secondChoice = page.secondChoice {
                 secondChoiceButton.setTitle(secondChoice.title, for: .normal)
+                secondChoiceButton.addTarget(self, action: #selector(PageController.loadSecondChoice), for: .touchUpInside)
             }
         }
     }
@@ -59,7 +80,6 @@ class PageController: UIViewController {
         super.viewWillLayoutSubviews()
 
         view.addSubview(artworkView)
-        artworkView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             artworkView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -69,8 +89,6 @@ class PageController: UIViewController {
         ])
 
         view.addSubview(storyLabel)
-        storyLabel.numberOfLines = 0
-        storyLabel.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             storyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
@@ -79,7 +97,6 @@ class PageController: UIViewController {
         ])
 
         view.addSubview(firstChoiceButton)
-        firstChoiceButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             firstChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -87,7 +104,6 @@ class PageController: UIViewController {
         ])
 
         view.addSubview(secondChoiceButton)
-        secondChoiceButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             secondChoiceButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

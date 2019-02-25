@@ -5,6 +5,10 @@
 
 import Foundation
 
+enum AdventureError: Error {
+    case nameNotProvided
+}
+
 class Page {
     let story: Story
     typealias Choice = (title: String, page: Page)
@@ -40,11 +44,11 @@ extension Page {
 }
 
 struct Adventure {
-    static var story: Page {
-        let returnTrip = Page(story: .returnTrip)
+    static func story(withName name: String) -> Page {
+        let returnTrip = Page(story: .returnTrip(name: name))
         let touchDown = returnTrip.addChoiceWith(title: "Stop And Investigate", story: .touchDown)
         let homeward = returnTrip.addChoiceWith(title: "Continue On To Earth", story: .homeward)
-        let rover = touchDown.addChoiceWith(title: "Explore The Rover", story: .rover)
+        let rover = touchDown.addChoiceWith(title: "Explore The Rover", story: .rover(name: name))
         let crate = touchDown.addChoiceWith(title: "Open The Crate", story: .crate)
         homeward.addChoiceWith(title: "Head back to Mars", page: touchDown)
         let home = homeward.addChoiceWith(title: "Continue Home to Earth", story: .home)
@@ -52,7 +56,7 @@ struct Adventure {
         let cave = rover.addChoiceWith(title: "Explore the Coordinates", story: .cave)
         rover.addChoiceWith(title: "Return to Earth", page: home)
 
-        cave.addChoiceWith(title: "Continue towards faint light", story: .droid)
+        cave.addChoiceWith(title: "Continue towards faint light", story: .droid(name: name))
         cave.addChoiceWith(title: "Refill the ship and explore the rover", page: rover)
 
         crate.addChoiceWith(title: "Explore the Rover", page: rover)
